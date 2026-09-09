@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#651713">
+<title>Sathgamaya by Yoga Samskara | 3-Day Live Introduction Workshop</title>
+<meta name="description" content="A 3-day live introduction workshop to release your stress, guided by a Sadhguru Gurukulam-trained teacher. ₹199.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          dusk:    '#26110F',
+          dusk2:   '#3D0D0C',
+          maroon:  '#651713',
+          maroon2: '#4C100D',
+          dawn:    '#E8B34F',
+          dawnlt:  '#F2C362',
+          linen:   '#FFF4DF',
+          linen2:  '#F3DFBD',
+          moss:    '#765C54',
+        },
+        fontFamily: {
+          serif: ['"Iowan Old Style"', '"Palatino Linotype"', 'Georgia', 'serif'],
+          sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'],
+        },
+        boxShadow: {
+          soft: '0 18px 60px rgba(63,18,11,.18)',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  .font-serif { font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif; }
+  .dawn-gradient {
+    background: radial-gradient(circle at 76% 18%, rgba(238,153,54,.20), transparent 22%), radial-gradient(circle at 22% 70%, rgba(198,42,31,.18), transparent 30%), linear-gradient(145deg, #250807 0%, #5C100E 52%, #2B0A08 100%);
+  }
+  .dawn-line { background: linear-gradient(90deg, #E56F22, #E8B34F); }
+  ::selection { background: #E8B34F; color: #26110F; }
+  :focus-visible { outline: 2px solid #E8B34F; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+  .faq-panel { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+  .faq-panel.open { max-height: 500px; }
+  .faq-chevron { transition: transform 0.3s ease; }
+  .faq-chevron.open { transform: rotate(180deg); }
+  #header { transition: padding 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease; }
+  .batch-label.selected { border-color: #E8B34F; background-color: rgba(232,179,79,0.12); }
+  @keyframes pulseNudge { 0%,100% { box-shadow: 0 0 0 0 rgba(232,179,79,0.5); } 50% { box-shadow: 0 0 0 6px rgba(232,179,79,0); } }
+  .nudge { animation: pulseNudge 1s ease-in-out 2; }
+  /* 003 theme integration: certificate viewer remains full-screen and preserves the image aspect ratio. */
+  #certModal > div { max-height: 94vh; }
+  #certImage { max-height: 84vh; width: 100%; object-fit: contain; background: #FFF4DF; }
+</style>
+</head>
+<body class="bg-linen text-dusk antialiased">
+
+<!-- ============ STICKY HEADER ============ -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-dusk/95 backdrop-blur border-b border-white/5 py-4">
+  <div class="max-w-6xl mx-auto px-5 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3 text-linen">
+      <img src="assets/images/logo-icon.jpg" alt="Samskara Yoga Center" class="w-9 h-9 rounded-full object-cover border border-white/20">
+      <span class="flex items-baseline gap-2">
+        <span class="font-serif text-xl tracking-wide">Yoga Samskara</span>
+        <span class="inline text-xs text-dawnlt/80">Sathgamaya Program</span>
+      </span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-linen/80">
+      <a href="#timings" class="hover:text-dawnlt transition-colors">Batch timings</a>
+      <a href="#problem" class="hover:text-dawnlt transition-colors">Why solo practice stalls</a>
+      <a href="#program" class="hover:text-dawnlt transition-colors">The 3 days</a>
+      <a href="#teacher" class="hover:text-dawnlt transition-colors">Your teachers</a>
+      <a href="#testimonials" class="hover:text-dawnlt transition-colors">Reviews</a>
+      <a href="#faq" class="hover:text-dawnlt transition-colors">FAQ</a>
+    </nav>
+    <a href="#register" class="hidden sm:inline-flex items-center gap-2 bg-dawn hover:bg-dawnlt text-dusk font-semibold text-sm px-5 py-2.5 rounded-full transition-colors">
+      Join Live for ₹199
+    </a>
+    <button id="menuBtn" aria-label="Open menu" aria-expanded="false" class="md:hidden text-linen p-2">
+      <svg id="iconMenu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="iconClose" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <!-- mobile menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-dusk border-t border-white/10 px-5 py-4 flex flex-col gap-4 text-linen/90 text-sm">
+    <a href="#timings" class="mobile-link">Batch timings</a>
+    <a href="#problem" class="mobile-link">Why solo practice stalls</a>
+    <a href="#program" class="mobile-link">The 3 days</a>
+    <a href="#teacher" class="mobile-link">Your teachers</a>
+    <a href="#testimonials" class="mobile-link">Reviews</a>
+    <a href="#faq" class="mobile-link">FAQ</a>
+    <a href="#register" class="mt-2 text-center bg-dawn text-dusk font-semibold px-5 py-2.5 rounded-full">Join Live for ₹199</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative dawn-gradient pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center relative z-10">
+    <div>
+      <p class="text-sm text-dawnlt/90 tracking-wide mb-4">Sathgamaya by Yoga Samskara</p>
+      <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-1.5 mb-6">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#E4B466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.2L12 16.4 5.7 20.8 8 13.6l-6-4.4h7.6z"/></svg>
+        <span class="text-xs text-linen/90 tracking-wide">Sadhguru Gurukulam-trained teacher, leading you to meditate</span>
+      </div>
+      <h1 class="font-serif text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.12] text-linen">
+        From restless mind to a stress-free life. 3 days, live, ₹199.
+      </h1>
+      <p class="mt-6 text-lg text-linen/85 max-w-md leading-relaxed">
+        A 3-day meditation workshop to release your stress — practices structured by Sadhguru, under the guidance of a Sadhguru Gurukulam-trained teacher.
+      </p>
+      <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4">
+        <a href="#register" class="inline-flex justify-center items-center gap-2 bg-dawn hover:bg-dawnlt text-dusk font-semibold px-8 py-4 rounded-full shadow-soft transition-colors">
+          Join Live for ₹199
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <span class="text-sm text-linen/60">13–15 September · 3 live sessions · ₹199 flat · pick your own batch time</span>
+      </div>
+      <div class="mt-10 flex items-center gap-6 text-linen/70 text-sm">
+        <div class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E4B466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Beginner friendly</div>
+      </div>
+    </div>
+
+    <div class="relative flex justify-center md:justify-end">
+      <svg viewBox="0 0 360 400" class="w-64 md:w-80 drop-shadow-2xl" aria-hidden="true">
+        <circle cx="180" cy="150" r="110" fill="#E4B466" opacity="0.18"/>
+        <circle cx="180" cy="150" r="70" fill="#E4B466" opacity="0.28"/>
+        <path d="M120 330 Q180 260 240 330 L250 380 L110 380 Z" fill="#4A1616"/>
+        <circle cx="180" cy="250" r="42" fill="#F5EEDF" opacity="0.95"/>
+        <path d="M138 285 Q180 320 222 285 Q222 340 180 355 Q138 340 138 285 Z" fill="#F5EEDF" opacity="0.9"/>
+        <path d="M100 300 Q60 290 55 250" stroke="#F5EEDF" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.85"/>
+        <path d="M260 300 Q300 290 305 250" stroke="#F5EEDF" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.85"/>
+        <circle cx="180" cy="216" r="20" fill="#F5EEDF"/>
+      </svg>
+    </div>
+</section>
+
+<!-- ============ BATCH TIMINGS ============ -->
+<section id="timings" class="bg-dusk2 py-14">
+  <div class="max-w-4xl mx-auto px-5">
+    <p class="text-center text-linen/60 text-sm mb-6">13–15 September · same live 3-day program — pick the batch time that works for you</p>
+    <div class="grid sm:grid-cols-3 gap-4" id="batchGrid">
+      <label class="batch-label flex flex-col items-center gap-1 border border-white/15 hover:border-dawn/60 rounded-xl px-4 py-5 cursor-pointer transition-colors">
+        <input type="radio" name="batch" value="early" data-label="6:00 – 7:00 AM · Early morning batch" class="accent-dawn mb-1">
+        <span class="text-linen font-serif text-lg">6:00 – 7:00 AM</span>
+        <span class="text-linen/50 text-xs">Early morning batch</span>
+      </label>
+      <label class="batch-label flex flex-col items-center gap-1 border border-white/15 hover:border-dawn/60 rounded-xl px-4 py-5 cursor-pointer transition-colors">
+        <input type="radio" name="batch" value="morning" data-label="7:30 – 8:30 AM · Morning batch, with Vinay Sharma" class="accent-dawn mb-1">
+        <span class="text-linen font-serif text-lg">7:30 – 8:30 AM</span>
+        <span class="text-linen/50 text-xs">Morning batch · with Vinay Sharma</span>
+      </label>
+      <label class="batch-label flex flex-col items-center gap-1 border border-white/15 hover:border-dawn/60 rounded-xl px-4 py-5 cursor-pointer transition-colors">
+        <input type="radio" name="batch" value="evening" data-label="7:00 – 8:00 PM · Evening batch" class="accent-dawn mb-1">
+        <span class="text-linen font-serif text-lg">7:00 – 8:00 PM</span>
+        <span class="text-linen/50 text-xs">Evening batch</span>
+      </label>
+    </div>
+  </div>
+</section>
+<section id="problem" class="bg-linen py-20 md:py-28">
+  <div class="max-w-4xl mx-auto px-5">
+    <p class="text-sm tracking-wide text-maroon font-medium mb-3">A quiet confession</p>
+    <h2 class="font-serif text-3xl md:text-4xl leading-tight mb-8">
+      You've already tried to handle your stress alone. It didn't fully hold.
+    </h2>
+    <p class="text-dusk/75 text-lg leading-relaxed mb-10 max-w-2xl">
+      I know this struggle personally — I carried my own stress for years, trying to meditate with no real guidance, no structure, and no one to turn to when it wasn't working. What finally released that stress for me wasn't a new technique. It was a structured, guided path.
+    </p>
+
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="border-t-2 border-maroon pt-5">
+        <h3 class="font-serif text-lg mb-2">No real structure</h3>
+        <p class="text-sm text-dusk/70 leading-relaxed">Trying a bit of this and a bit of that, with no clear order or method, keeps you starting over again and again instead of actually progressing.</p>
+      </div>
+      <div class="border-t-2 border-maroon pt-5">
+        <h3 class="font-serif text-lg mb-2">Consistency dies alone</h3>
+        <p class="text-sm text-dusk/70 leading-relaxed">Day one is full of intention. By day four, the mat stays rolled up. Without someone expecting you to show up, the practice quietly slips off the calendar — not from a lack of will, but a lack of structure.</p>
+      </div>
+      <div class="border-t-2 border-maroon pt-5">
+        <h3 class="font-serif text-lg mb-2">Your doubts go unanswered</h3>
+        <p class="text-sm text-dusk/70 leading-relaxed">"Am I doing this right?" "Why do I feel this way?" "Is this even working?" Alone, these questions pile up quietly until the whole practice starts to feel unclear, and unclear things get abandoned.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE SATHGAMAYA SOLUTION ============ -->
+<section id="program" class="bg-dusk2 py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-5">
+    <p class="text-sm tracking-wide text-dawnlt font-medium mb-3">The Sathgamaya framework</p>
+    <h2 class="font-serif text-3xl md:text-4xl text-linen leading-tight mb-4 max-w-2xl">
+      Three live sessions. One teacher, guiding you all the way.
+    </h2>
+    <p class="text-linen/70 text-lg leading-relaxed mb-14 max-w-2xl">
+      Every session is live over video call, so every participant gets real, personal attention. Here is exactly what happens each session.
+    </p>
+
+    <div class="space-y-10">
+      <div class="grid md:grid-cols-[80px_1fr] gap-5 md:gap-8 items-start">
+        <div class="font-serif text-5xl text-dawn/50">01</div>
+        <div class="border-l-2 border-dawn/30 pl-6 pb-2">
+          <h3 class="font-serif text-xl text-linen mb-2">Loosen — Upa Yoga</h3>
+          <p class="text-linen/65 leading-relaxed">Simple joint and energy-activating movements to release the physical stiffness that makes sitting still feel impossible, guided live so you move with the group in real time.</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-[80px_1fr] gap-5 md:gap-8 items-start">
+        <div class="font-serif text-5xl text-dawn/50">02</div>
+        <div class="border-l-2 border-dawn/30 pl-6 pb-2">
+          <h3 class="font-serif text-xl text-linen mb-2">Sit — Sadhguru-Guided Meditation</h3>
+          <p class="text-linen/65 leading-relaxed">A Sadhguru-guided meditation practice, done together, live — the same structured method that shifted things for me.</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-[80px_1fr] gap-5 md:gap-8 items-start">
+        <div class="font-serif text-5xl text-dawn/50">03</div>
+        <div class="border-l-2 border-dawn/30 pl-6 pb-2">
+          <h3 class="font-serif text-xl text-linen mb-2">Ask — Open Q&A</h3>
+          <p class="text-linen/65 leading-relaxed">Ten to fifteen minutes where nothing is off-limits — technique, experience, or doubt. Ask me directly, and get an answer live.</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-[80px_1fr] gap-5 md:gap-8 items-start">
+        <div class="font-serif text-5xl text-dawn/50">→</div>
+        <div class="border-l-2 border-dawnlt/50 pl-6">
+          <h3 class="font-serif text-xl text-dawnlt mb-2">Day 3 — a special Master Call</h3>
+          <p class="text-linen/65 leading-relaxed">On the final session, I'll close with a short Master Call — capped to a small batch — for those who feel the shift and want to go further, a glimpse of what's possible for the ones ready to continue this journey with me.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUTHORITY & LINEAGE ============ -->
+<section id="teacher" class="bg-linen py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-5 grid md:grid-cols-[1fr_1.4fr] gap-12 items-center">
+    <div class="flex flex-col items-center md:items-start gap-4">
+      <img src="assets/images/rahul-portrait.jpg" alt="Rahul, Sadhguru Gurukulam-trained teacher" class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-linen shadow-soft">
+      <button class="cert-trigger flex items-center gap-2 bg-white border border-dusk/10 rounded-full pl-1.5 pr-4 py-1.5 shadow-sm hover:shadow-md transition-shadow" data-cert="assets/images/rahul-certificate.jpg" data-name="Rahul">
+        <img src="assets/images/cert-seal.jpg" alt="" class="w-7 h-7 rounded-full object-cover">
+        <span class="text-xs font-medium text-dusk/70">View certificate</span>
+      </button>
+    </div>
+    <div>
+      <p class="text-sm tracking-wide text-maroon font-medium mb-3">My story</p>
+      <h2 class="font-serif text-3xl md:text-4xl leading-tight mb-1">Rahul</h2>
+      <p class="text-dusk/50 text-sm mb-4">Yoga Samskara · Sathgamaya Program</p>
+      <p class="text-dusk/75 text-lg leading-relaxed mb-4">
+        For years I struggled to meditate without any real guidance — trying on my own, getting nowhere, and slowly losing faith that it would ever work for me. What changed everything was Sadhguru's structured methods. They helped me release my stress and, for the first time, actually experience meditativeness — not just the idea of it.
+      </p>
+      <p class="text-dusk/75 leading-relaxed mb-6">
+        That journey led me to train formally as a teacher within the Sadhguru Gurukulam. In this 3-day program, I share the exact path I walked, so you don't have to struggle alone the way I did.
+      </p>
+      <blockquote class="border-l-2 border-dawn pl-5 italic text-dusk/80 font-serif text-lg">
+        "I couldn't find my way to meditativeness alone. A structured path, and someone to guide me through it, made all the difference — that is what I want to give you."
+      </blockquote>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-5 mt-14 pt-14 border-t border-dusk/10">
+    <p class="text-sm tracking-wide text-maroon font-medium mb-6">Also teaching this program</p>
+    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+      <button type="button" class="cert-trigger shrink-0 rounded-full cursor-zoom-in focus:outline-none" data-cert="assets/images/vinay-portrait.jpg" data-name="Vinay Sharma" data-caption="Vinay Sharma" aria-label="View Vinay Sharma photo larger">
+        <img src="assets/images/vinay-portrait.jpg" alt="Vinay Sharma, Sadhguru Gurukulam-trained teacher" class="w-20 h-20 rounded-full object-cover border-2 border-linen shadow-sm hover:shadow-md transition-shadow">
+      </button>
+      <div class="text-center sm:text-left">
+        <h3 class="font-serif text-xl mb-1">Vinay Sharma</h3>
+        <p class="text-dusk/60 text-sm mb-2">Sadhguru Gurukulam-trained teacher · leads the 7:30–8:30 AM morning batch</p>
+        <p class="text-dusk/70 leading-relaxed max-w-xl mb-3">Trained within the same Sadhguru Gurukulam lineage, Vinay brings the identical structured Sathgamaya framework to those joining the morning batch.</p>
+        <button class="cert-trigger inline-flex items-center gap-2 bg-white border border-dusk/10 rounded-full pl-1.5 pr-4 py-1.5 shadow-sm hover:shadow-md transition-shadow" data-cert="assets/images/vinay-certificate.jpg" data-name="Vinay">
+          <img src="assets/images/cert-seal.jpg" alt="" class="w-7 h-7 rounded-full object-cover">
+          <span class="text-xs font-medium text-dusk/70">View certificate</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="testimonials" class="bg-linen2 py-20 md:py-28">
+  <div class="max-w-5xl mx-auto px-5">
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
+      <div>
+        <p class="text-sm tracking-wide text-maroon font-medium mb-3">From the yoga center in Ballari</p>
+        <h2 class="font-serif text-3xl md:text-4xl leading-tight">What students are already saying</h2>
+      </div>
+      <a href="https://www.google.com/maps/place/?q=place_id:ChIJcYBBsH0RtzsRJ5QxVySKNfE" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm text-maroon font-medium shrink-0">
+        <span class="flex text-dawn">★★★★★</span>
+        57 Google reviews
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+
+    <div class="grid sm:grid-cols-2 gap-6">
+      <div class="bg-linen rounded-xl border border-dusk/10 p-6">
+        <span class="flex text-dawn text-sm mb-3">★★★★★</span>
+        <p class="text-dusk/75 leading-relaxed mb-3">"Every session is well-structured and calming — I leave feeling centred and present. A patient, supportive teacher who guides you through with real care."</p>
+        <p class="text-dusk/45 text-xs">Verified Google review</p>
+      </div>
+      <div class="bg-linen rounded-xl border border-dusk/10 p-6">
+        <span class="flex text-dawn text-sm mb-3">★★★★★</span>
+        <p class="text-dusk/75 leading-relaxed mb-3">"Just three weeks in and I'm already noticing real improvement in my flexibility. The centre is clean and welcoming, and the teaching is genuinely knowledgeable."</p>
+        <p class="text-dusk/45 text-xs">Verified Google review</p>
+      </div>
+      <div class="bg-linen rounded-xl border border-dusk/10 p-6">
+        <span class="flex text-dawn text-sm mb-3">★★★★★</span>
+        <p class="text-dusk/75 leading-relaxed mb-3">"Truly beneficial for my health and stress levels. The teaching was generous and thorough — the perfect setting to build a real practice. I'll be recommending this to family."</p>
+        <p class="text-dusk/45 text-xs">Verified Google review</p>
+      </div>
+      <div class="bg-linen rounded-xl border border-dusk/10 p-6">
+        <span class="flex text-dawn text-sm mb-3">★★★★★</span>
+        <p class="text-dusk/75 leading-relaxed mb-3">"Calm, well-structured and genuinely easy to follow, even as a beginner. Corrections are always gentle. I feel more relaxed after every single class."</p>
+        <p class="text-dusk/45 text-xs">Verified Google review</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="register" class="bg-dusk py-20 md:py-28">
+  <div class="max-w-md mx-auto px-5">
+    <div class="text-center mb-10">
+      <p class="text-sm tracking-wide text-dawnlt font-medium mb-3">Reserve your seat</p>
+      <h2 class="font-serif text-3xl text-linen leading-tight">Less than one evening's chai order.</h2>
+    </div>
+
+    <div id="batchConfirm" class="flex items-center justify-between gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-3 mb-5 text-sm">
+      <span class="text-linen/80">Your batch: <span id="batchConfirmLabel" class="text-dawnlt font-medium">not selected yet</span></span>
+      <a href="#timings" class="text-dawnlt underline underline-offset-2 shrink-0">Change</a>
+    </div>
+
+    <div class="bg-linen rounded-2xl shadow-soft overflow-hidden">
+      <div class="dawn-gradient px-7 py-8 text-center">
+        <p class="text-linen/80 text-sm mb-1">3-Day Live Sadhana Reset · 13–15 Sept</p>
+        <div class="flex items-end justify-center gap-2">
+          <span class="font-serif text-5xl text-linen">₹199</span>
+          <span class="text-linen/60 text-sm mb-1.5">one time</span>
+        </div>
+      </div>
+      <div class="px-7 py-7">
+        <ul class="space-y-3 mb-7 text-sm">
+          <li class="flex items-start gap-3"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6E2020" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 3 live evenings, guided in real time</li>
+          <li class="flex items-start gap-3"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6E2020" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Upa Yoga + Sadhguru-guided meditation, daily</li>
+          <li class="flex items-start gap-3"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6E2020" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Open Q&A — your doubts, answered live</li>
+          <li class="flex items-start gap-3"><svg class="mt-0.5 shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6E2020" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Choose your own batch time</li>
+        </ul>
+        <button id="payBtn" class="w-full bg-maroon hover:bg-maroon2 text-linen font-semibold py-4 rounded-full transition-colors">
+          Pay ₹199 &amp; Join Live
+        </button>
+        <div class="flex items-center justify-center gap-4 mt-4 text-xs text-dusk/50">
+          <span class="flex items-center gap-1.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4B5B41" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            Secured checkout
+          </span>
+          <span>·</span>
+          <span>Instant UPI / GPay / PhonePe</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- countdown -->
+    <div class="mt-10 text-center">
+      <p class="text-linen/60 text-sm mb-3">This batch (13–15 Sept) starts in</p>
+      <div id="countdown" class="flex justify-center gap-3 font-serif text-linen">
+        <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 min-w-[64px]"><div id="cd-h" class="text-2xl">00</div><div class="text-[10px] text-linen/50 tracking-wide">HOURS</div></div>
+        <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 min-w-[64px]"><div id="cd-m" class="text-2xl">00</div><div class="text-[10px] text-linen/50 tracking-wide">MINS</div></div>
+        <div class="bg-white/5 border border-white/10 rounded-lg px-4 py-3 min-w-[64px]"><div id="cd-s" class="text-2xl">00</div><div class="text-[10px] text-linen/50 tracking-wide">SECS</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="bg-linen py-20 md:py-28">
+  <div class="max-w-2xl mx-auto px-5">
+    <p class="text-sm tracking-wide text-maroon font-medium mb-3">Before you join</p>
+    <h2 class="font-serif text-3xl md:text-4xl leading-tight mb-10">Questions worth asking</h2>
+
+    <div class="divide-y divide-dusk/10 border-t border-b border-dusk/10" id="faqList">
+
+      <div class="faq-item py-5">
+        <button class="faq-btn w-full flex items-center justify-between text-left gap-4">
+          <span class="font-serif text-lg">Why can't I just do this on my own?</span>
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-panel">
+          <p class="text-dusk/70 leading-relaxed pt-3 pr-8">I tried that for years, and it's what kept me stuck. What actually moved me forward was a structured method and a guide to walk it with me. This program gives you both — so you don't spend years figuring it out the way I did.</p>
+        </div>
+      </div>
+
+      <div class="faq-item py-5">
+        <button class="faq-btn w-full flex items-center justify-between text-left gap-4">
+          <span class="font-serif text-lg">I'm a complete beginner. Will I be lost?</span>
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-panel">
+          <p class="text-dusk/70 leading-relaxed pt-3 pr-8">This program is built for beginners first. Nothing is assumed. Every posture and instruction is demonstrated live, and you're free to ask "what does that mean" as many times as you need to.</p>
+        </div>
+      </div>
+
+      <div class="faq-item py-5">
+        <button class="faq-btn w-full flex items-center justify-between text-left gap-4">
+          <span class="font-serif text-lg">What if I can't attend all 3 days live?</span>
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-panel">
+          <p class="text-dusk/70 leading-relaxed pt-3 pr-8">The value here is being seen live, so I encourage you to block the three evenings before joining. If you truly miss one, message the group and we'll work out the best way to catch you up before the next session.</p>
+        </div>
+      </div>
+
+      <div class="faq-item py-5">
+        <button class="faq-btn w-full flex items-center justify-between text-left gap-4">
+          <span class="font-serif text-lg">Is ₹199 really the full price, no hidden catch?</span>
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-panel">
+          <p class="text-dusk/70 leading-relaxed pt-3 pr-8">₹199 gets you all three live days, in full — no catch. On Day 3, I'll close with a short Master Call for anyone who wants to continue further with me. It's entirely optional, and the 3-day workshop stands complete on its own either way.</p>
+        </div>
+      </div>
+
+      <div class="faq-item py-5">
+        <button class="faq-btn w-full flex items-center justify-between text-left gap-4">
+          <span class="font-serif text-lg">What do I need to join?</span>
+          <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-panel">
+          <p class="text-dusk/70 leading-relaxed pt-3 pr-8">A phone or laptop with a camera, a quiet corner with enough space to sit and move, and roughly 45 minutes each session. Camera-on is encouraged, so you feel present with the group rather than watching alone.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER / STICKY MOBILE CTA ============ -->
+<footer class="bg-dusk py-10 pb-28 md:pb-10">
+  <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4 text-linen/50 text-sm">
+    <span class="font-serif text-linen/80">Yoga Samskara — Sathgamaya Program</span>
+    <span>Taught live by Rahul · Sadhguru Gurukulam-trained</span>
+  </div>
+</footer>
+
+<!-- ============ CERTIFICATE LIGHTBOX ============ -->
+<div id="certModal" class="hidden fixed inset-0 z-[60] bg-dusk/90 backdrop-blur-sm items-center justify-center p-5">
+  <div class="relative max-w-2xl w-full">
+    <button id="certClose" aria-label="Close" class="absolute -top-12 right-0 text-linen/80 hover:text-linen p-2">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <img id="certImage" src="" alt="Certificate" class="w-full rounded-lg shadow-soft">
+    <p id="certCaption" class="text-center text-linen/70 text-sm mt-3"></p>
+  </div>
+</div>
+
+<!-- sticky mobile CTA bar -->
+<div class="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-dusk/95 backdrop-blur border-t border-white/10 px-5 py-3">
+  <a href="#register" class="flex items-center justify-center gap-2 bg-dawn text-dusk font-semibold py-3.5 rounded-full">
+    Join Live for ₹199
+  </a>
+</div>
+
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const iconMenu = document.getElementById('iconMenu');
+  const iconClose = document.getElementById('iconClose');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    iconMenu.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      iconMenu.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    });
+  });
+
+  // Sticky header shrink on scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+      header.classList.add('py-2', 'shadow-lg');
+      header.classList.remove('py-4');
+    } else {
+      header.classList.remove('py-2', 'shadow-lg');
+      header.classList.add('py-4');
+    }
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.nextElementSibling;
+      const chevron = btn.querySelector('.faq-chevron');
+      const isOpen = panel.classList.contains('open');
+      document.querySelectorAll('.faq-panel.open').forEach(p => {
+        p.classList.remove('open');
+        p.previousElementSibling.querySelector('.faq-chevron').classList.remove('open');
+      });
+      if (!isOpen) {
+        panel.classList.add('open');
+        chevron.classList.add('open');
+      }
+    });
+  });
+
+  // Certificate lightbox
+  const certModal = document.getElementById('certModal');
+  const certImage = document.getElementById('certImage');
+  const certCaption = document.getElementById('certCaption');
+  const certClose = document.getElementById('certClose');
+  document.querySelectorAll('.cert-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      certImage.src = btn.dataset.cert;
+      certCaption.textContent = btn.dataset.caption || (btn.dataset.name + '\u2019s Sadhguru Gurukulam certification');
+      certModal.classList.remove('hidden');
+      certModal.classList.add('flex');
+    });
+  });
+  function closeCertModal() {
+    certModal.classList.add('hidden');
+    certModal.classList.remove('flex');
+  }
+  certClose.addEventListener('click', closeCertModal);
+  certModal.addEventListener('click', (e) => { if (e.target === certModal) closeCertModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCertModal(); });
+
+  // Batch time picker <-> pricing card sync
+  const batchRadios = document.querySelectorAll('input[name="batch"]');
+  const batchConfirmLabel = document.getElementById('batchConfirmLabel');
+  const batchConfirm = document.getElementById('batchConfirm');
+  const payBtn = document.getElementById('payBtn');
+
+  function updateBatchConfirm() {
+    const checked = document.querySelector('input[name="batch"]:checked');
+    document.querySelectorAll('.batch-label').forEach(l => l.classList.remove('selected'));
+    if (checked) {
+      batchConfirmLabel.textContent = checked.dataset.label;
+      checked.closest('.batch-label').classList.add('selected');
+      batchConfirm.classList.remove('nudge');
+    } else {
+      batchConfirmLabel.textContent = 'not selected yet';
+    }
+  }
+  batchRadios.forEach(r => r.addEventListener('change', updateBatchConfirm));
+  updateBatchConfirm();
+
+  payBtn.addEventListener('click', (e) => {
+    const checked = document.querySelector('input[name="batch"]:checked');
+    if (!checked) {
+      e.preventDefault();
+      document.getElementById('timings').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      batchConfirm.classList.add('nudge');
+    }
+  });
+
+  // Countdown timer — set to the batch start date, 13 September (IST)
+  const target = new Date('2026-09-13T00:00:00+05:30').getTime();
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = Math.max(target - now, 0);
+    const h = Math.floor(distance / (1000 * 60 * 60));
+    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
