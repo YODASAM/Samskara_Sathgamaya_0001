@@ -6,6 +6,11 @@
 <meta name="theme-color" content="#651713">
 <title>Sathgamaya by Yoga Samskara | 3-Day Live Introduction Workshop</title>
 <meta name="description" content="A 3-day live introduction workshop to release your stress, guided by a Sadhguru Gurukulam-trained teacher. ₹199.">
+<meta property="og:title" content="Sathgamaya by Yoga Samskara | 3-Day Live Introduction Workshop">
+<meta property="og:description" content="Classical Hatha Yoga practices structured by Sadhguru. 3 live sessions, ₹199.">
+<meta property="og:image" content="assets/images/lineage-banner.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -57,6 +62,20 @@
   /* 003 theme integration: certificate viewer remains full-screen and preserves the image aspect ratio. */
   #certModal > div { max-height: 94vh; }
   #certImage { max-height: 84vh; width: 100%; object-fit: contain; background: #FFF4DF; }
+  /* Lineage band: the Classical Hatha Yoga / Sadhguru banner sits flush under
+     the fixed header, so the lineage is the first thing a visitor sees. */
+  .lineage-band { background: linear-gradient(180deg, #2B0A08 0%, #3D0D0C 100%); }
+  .lineage-band img { display: block; width: 100%; height: auto; }
+  /* Credential photographs — warm ivory mat, matching the certificate lightbox. */
+  .cred-photo { background: #FFF4DF; }
+  .cred-photo img { display: block; width: 100%; height: auto; }
+  /* Both certification photographs share one 4:5 frame so the pair sits level,
+     regardless of how each was originally shot. */
+  .cred-frame { aspect-ratio: 4 / 5; }
+  .cred-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+  .zoomable { cursor: zoom-in; }
+  .zoomable img { transition: transform .4s ease; }
+  .zoomable:hover img { transform: scale(1.03); }
 </style>
 </head>
 <body class="bg-linen text-dusk antialiased">
@@ -99,8 +118,22 @@
   </div>
 </header>
 
+<!-- ============ LINEAGE BAND (top of page) ============ -->
+<section class="lineage-band pt-20 md:pt-24" aria-label="Classical Hatha Yoga, practices structured by Sadhguru">
+  <div class="max-w-xl md:max-w-3xl mx-auto px-5 md:px-0">
+    <img src="assets/images/lineage-banner.jpg"
+         alt="Classical Hatha Yoga — practices structured by Sadhguru"
+         width="1179" height="705" fetchpriority="high" decoding="async">
+  </div>
+  <div class="max-w-5xl mx-auto px-5 py-5 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
+    <span class="text-dawnlt text-sm font-medium tracking-wide">Classical Hatha Yoga</span>
+    <span class="hidden sm:inline text-linen/25">|</span>
+    <span class="text-linen/70 text-sm">Practices structured by Sadhguru, taught by Gurukulam-trained teachers</span>
+  </div>
+</section>
+
 <!-- ============ HERO ============ -->
-<section id="top" class="relative dawn-gradient pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+<section id="top" class="relative dawn-gradient pt-16 pb-20 md:pt-20 md:pb-28 overflow-hidden">
   <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center relative z-10">
     <div>
       <p class="text-sm text-dawnlt/90 tracking-wide mb-4">Sathgamaya by Yoga Samskara</p>
@@ -138,6 +171,7 @@
         <circle cx="180" cy="216" r="20" fill="#F5EEDF"/>
       </svg>
     </div>
+  </div>
 </section>
 
 <!-- ============ BATCH TIMINGS ============ -->
@@ -201,6 +235,7 @@
       Every session is live over video call, so every participant gets real, personal attention. Here is exactly what happens each session.
     </p>
 
+    <div class="grid lg:grid-cols-[1fr_320px] gap-12 items-start">
     <div class="space-y-10">
       <div class="grid md:grid-cols-[80px_1fr] gap-5 md:gap-8 items-start">
         <div class="font-serif text-5xl text-dawn/50">01</div>
@@ -231,6 +266,17 @@
         </div>
       </div>
     </div>
+
+      <!-- Practice image, anchored to the three-day breakdown -->
+      <figure class="hidden lg:block">
+        <div class="rounded-2xl overflow-hidden border border-white/10 shadow-soft">
+          <img src="assets/images/practice.jpg" alt="A student seated in practice" width="1080" height="1200" loading="lazy" decoding="async" class="w-full h-auto">
+        </div>
+        <figcaption class="text-linen/45 text-xs mt-3 leading-relaxed">
+          Upa Yoga and guided meditation — the same sequence, every session, so the practice becomes familiar rather than novel.
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -238,8 +284,8 @@
 <section id="teacher" class="bg-linen py-20 md:py-28">
   <div class="max-w-5xl mx-auto px-5 grid md:grid-cols-[1fr_1.4fr] gap-12 items-center">
     <div class="flex flex-col items-center md:items-start gap-4">
-      <img src="assets/images/rahul-portrait.jpg" alt="Rahul, Sadhguru Gurukulam-trained teacher" class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-linen shadow-soft">
-      <button class="cert-trigger flex items-center gap-2 bg-white border border-dusk/10 rounded-full pl-1.5 pr-4 py-1.5 shadow-sm hover:shadow-md transition-shadow" data-cert="assets/images/rahul-certificate.jpg" data-name="Rahul">
+      <img src="assets/images/rahul-portrait.jpg" alt="Rahul, Sadhguru Gurukulam-trained teacher" width="700" height="700" loading="lazy" decoding="async" class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-linen shadow-soft">
+      <button class="cert-trigger flex items-center gap-2 bg-white border border-dusk/10 rounded-full pl-1.5 pr-4 py-1.5 shadow-sm hover:shadow-md transition-shadow" data-cert="assets/images/rahul-with-certificate.jpg" data-name="Rahul" data-caption="Rahul with his Classical Hatha Yoga certification, Sadhguru Gurukulam">
         <img src="assets/images/cert-seal.jpg" alt="" class="w-7 h-7 rounded-full object-cover">
         <span class="text-xs font-medium text-dusk/70">View certificate</span>
       </button>
@@ -260,11 +306,40 @@
     </div>
   </div>
 
-  <div class="max-w-5xl mx-auto px-5 mt-14 pt-14 border-t border-dusk/10">
+  <!-- Certification, shown rather than claimed -->
+  <div class="max-w-5xl mx-auto px-5 mt-16 pt-14 border-t border-dusk/10">
+    <p class="text-sm tracking-wide text-maroon font-medium mb-3">Certified, not self-declared</p>
+    <h3 class="font-serif text-2xl md:text-3xl leading-tight mb-3">Trained at the Isha Yoga Center</h3>
+    <p class="text-dusk/70 leading-relaxed max-w-2xl mb-9">
+      Both teachers completed the intensive Classical Hatha Yoga teacher-training programme at the Sadhguru Gurukulam. Tap either photograph to view it full size.
+    </p>
+    <div class="grid sm:grid-cols-2 gap-6">
+      <figure>
+        <button type="button" class="cert-trigger zoomable cred-photo cred-frame block w-full rounded-2xl overflow-hidden border border-dusk/10 shadow-soft focus:outline-none"
+                data-cert="assets/images/rahul-with-certificate.jpg"
+                data-caption="Rahul — Classical Hatha Yoga certification, Sadhguru Gurukulam"
+                aria-label="View Rahul's certification photograph full size">
+          <img src="assets/images/rahul-with-certificate.jpg" alt="Rahul holding his Classical Hatha Yoga certificate at the Isha Yoga Center" width="900" height="932" loading="lazy" decoding="async">
+        </button>
+        <figcaption class="text-dusk/60 text-sm mt-3">Rahul — Classical Hatha Yoga, Sadhguru Gurukulam</figcaption>
+      </figure>
+      <figure>
+        <button type="button" class="cert-trigger zoomable cred-photo cred-frame block w-full rounded-2xl overflow-hidden border border-dusk/10 shadow-soft focus:outline-none"
+                data-cert="assets/images/vinay-with-certificate.jpg"
+                data-caption="Vinay Sharma — Classical Hatha Yoga certification, Sadhguru Gurukulam"
+                aria-label="View Vinay Sharma's certification photograph full size">
+          <img src="assets/images/vinay-with-certificate.jpg" alt="Vinay Sharma holding his Classical Hatha Yoga certificate at the Isha Yoga Center" width="760" height="1013" loading="lazy" decoding="async">
+        </button>
+        <figcaption class="text-dusk/60 text-sm mt-3">Vinay Sharma — Classical Hatha Yoga, Sadhguru Gurukulam</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-5 mt-16 pt-14 border-t border-dusk/10">
     <p class="text-sm tracking-wide text-maroon font-medium mb-6">Also teaching this program</p>
     <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5">
       <button type="button" class="cert-trigger shrink-0 rounded-full cursor-zoom-in focus:outline-none" data-cert="assets/images/vinay-portrait.jpg" data-name="Vinay Sharma" data-caption="Vinay Sharma" aria-label="View Vinay Sharma photo larger">
-        <img src="assets/images/vinay-portrait.jpg" alt="Vinay Sharma, Classical Hatha Yoga teacher" class="w-20 h-20 rounded-full object-cover border-2 border-linen shadow-sm hover:shadow-md transition-shadow">
+        <img src="assets/images/vinay-portrait.jpg" alt="Vinay Sharma, Classical Hatha Yoga teacher" width="700" height="700" loading="lazy" decoding="async" class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-linen shadow-sm hover:shadow-md transition-shadow">
       </button>
       <div class="text-center sm:text-left">
         <h3 class="font-serif text-xl mb-1">Vinay Sharma</h3>
@@ -277,7 +352,7 @@
   “Yoga gave me a path to explore myself. That is the journey I want to share with you.”
 </p>
    
-        <button class="cert-trigger inline-flex items-center gap-2 bg-white border border-dusk/10 rounded-full pl-1.5 pr-4 py-1.5 shadow-sm hover:shadow-md transition-shadow" data-cert="assets/images/vinay-certificate.jpg" data-name="Vinay">
+        <button class="cert-trigger inline-flex items-center gap-2 bg-white border border-dusk/10 rounded-full pl-1.5 pr-4 py-1.5 shadow-sm hover:shadow-md transition-shadow" data-cert="assets/images/vinay-with-certificate.jpg" data-name="Vinay" data-caption="Vinay Sharma with his Classical Hatha Yoga certification, Sadhguru Gurukulam">
           <img src="assets/images/cert-seal.jpg" alt="" class="w-7 h-7 rounded-full object-cover">
           <span class="text-xs font-medium text-dusk/70">View certificate</span>
         </button>
@@ -443,8 +518,19 @@
 </section>
 
 <!-- ============ FOOTER / STICKY MOBILE CTA ============ -->
-<footer class="bg-dusk py-10 pb-28 md:pb-10">
-  <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4 text-linen/50 text-sm">
+<footer class="bg-dusk pt-14 pb-28 md:pb-12">
+  <!-- Certified-teacher badge closes the page as it opened: on the lineage -->
+  <div class="max-w-6xl mx-auto px-5 flex flex-col items-center text-center">
+    <img src="assets/images/certified-teacher-badge.jpg"
+         alt="Classical Hatha Yoga — Sadhguru Gurukulam Certified Teacher"
+         width="713" height="277" loading="lazy" decoding="async"
+         class="w-64 sm:w-80 h-auto rounded-xl shadow-soft">
+    <p class="text-linen/45 text-xs mt-4 max-w-sm leading-relaxed">
+      Taught by teachers certified through the Classical Hatha Yoga programme at the Sadhguru Gurukulam.
+    </p>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-5 mt-10 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-linen/50 text-sm">
     <span class="font-serif text-linen/80">Yoga Samskara — Sathgamaya Program</span>
     <span>Taught live by Rahul · Sadhguru Gurukulam-trained</span>
   </div>
