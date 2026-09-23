@@ -6,11 +6,6 @@
 <meta name="theme-color" content="#651713">
 <title>Sathgamaya by Yoga Samskara | 3-Day Live Introduction Workshop</title>
 <meta name="description" content="A 3-day live introduction workshop to release your stress, guided by a Sadhguru Gurukulam-trained teacher. ₹199.">
-<meta property="og:title" content="Sathgamaya by Yoga Samskara | 3-Day Live Introduction Workshop">
-<meta property="og:description" content="Classical Hatha Yoga practices structured by Sadhguru. 3 live sessions, ₹199.">
-<meta property="og:image" content="assets/images/lineage-banner.jpg">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
@@ -62,20 +57,6 @@
   /* 003 theme integration: certificate viewer remains full-screen and preserves the image aspect ratio. */
   #certModal > div { max-height: 94vh; }
   #certImage { max-height: 84vh; width: 100%; object-fit: contain; background: #FFF4DF; }
-  /* Lineage band: the Classical Hatha Yoga / Sadhguru banner sits flush under
-     the fixed header, so the lineage is the first thing a visitor sees. */
-  .lineage-band { background: linear-gradient(180deg, #2B0A08 0%, #3D0D0C 100%); }
-  .lineage-band img { display: block; width: 100%; height: auto; }
-  /* Credential photographs — warm ivory mat, matching the certificate lightbox. */
-  .cred-photo { background: #FFF4DF; }
-  .cred-photo img { display: block; width: 100%; height: auto; }
-  /* Both certification photographs share one 4:5 frame so the pair sits level,
-     regardless of how each was originally shot. */
-  .cred-frame { aspect-ratio: 4 / 5; }
-  .cred-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
-  .zoomable { cursor: zoom-in; }
-  .zoomable img { transition: transform .4s ease; }
-  .zoomable:hover img { transform: scale(1.03); }
 </style>
 </head>
 <body class="bg-linen text-dusk antialiased">
@@ -96,11 +77,15 @@
       <a href="#program" class="hover:text-dawnlt transition-colors">The 3 days</a>
       <a href="#teacher" class="hover:text-dawnlt transition-colors">Your teachers</a>
       <a href="#testimonials" class="hover:text-dawnlt transition-colors">Reviews</a>
-      <a href="#faq" class="hover:text-dawnlt transition-colors">FAQ</a>
-    </nav>
-    <a href="#register" class="join-live-cta hidden sm:inline-flex items-center gap-2 bg-dawn hover:bg-dawnlt text-dusk font-semibold text-sm px-5 py-2.5 rounded-full transition-colors">
-      Join Live for ₹199
-    </a>
+  <a href="#faq" class="hover:text-dawnlt transition-colors">FAQ</a>
+</nav>
+<!-- Added 'sm:ml-8' (margin-left) to create blank space -->
+<a href="#register" class="hidden sm:inline-flex items-center gap-2 bg-dawn hover:bg-dawnlt text-dusk font-semibold text-sm px-5 py-2.5 rounded-full transition-colors sm:ml-11">
+    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <!-- your icon paths here -->
+  </svg>
+  Join Live for ₹199
+</a>
     <button id="menuBtn" aria-label="Open menu" aria-expanded="false" class="md:hidden text-linen p-2">
       <svg id="iconMenu" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       <svg id="iconClose" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
@@ -114,25 +99,12 @@
     <a href="#teacher" class="mobile-link">Your teachers</a>
     <a href="#testimonials" class="mobile-link">Reviews</a>
     <a href="#faq" class="mobile-link">FAQ</a>
-    <a href="#register" class="join-live-cta mt-2 text-center bg-dawn text-dusk font-semibold px-5 py-2.5 rounded-full">Join Live for ₹199</a>
+    <a href="#register" class="mt-2 text-center bg-dawn text-dusk font-semibold px-5 py-2.5 rounded-full">Join Live for ₹199</a>
   </div>
 </header>
 
-<!-- ============ LINEAGE BAND (top of page) ============ -->
-<section class="lineage-band pt-20 md:pt-24" aria-label="Classical Hatha Yoga, practices structured by Sadhguru">
-  <div class="max-w-xl md:max-w-3xl mx-auto px-5 md:px-0">
-    <img src="assets/images/lineage-banner.jpg"
-         alt="Classical Hatha Yoga — practices structured by Sadhguru"
-         width="1179" height="705" fetchpriority="high" decoding="async">
-  </div>
-  <div class="max-w-5xl mx-auto px-5 py-5 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
-    <span class="hidden sm:inline text-linen/25">|</span>
-    <span class="text-linen/70 text-sm">Taught by Gurukulam-trained teachers</span>
-  </div>
-</section>
-
 <!-- ============ HERO ============ -->
-<section id="top" class="relative dawn-gradient pt-16 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+<section id="top" class="relative dawn-gradient pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
   <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center relative z-10">
     <div>
       <p class="text-sm text-dawnlt/90 tracking-wide mb-4">Sathgamaya by Yoga Samskara</p>
@@ -141,21 +113,17 @@
         <span class="text-xs text-linen/90 tracking-wide">Sadhguru Gurukulam-trained teacher, leading you to meditate</span>
       </div>
       <h1 class="font-serif text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.12] text-linen">
-        From restless mind to a stress-free life.
-      </h1>
-	        <h1 class="font-serif text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.12] text-linen">
-		3 days,₹199.
+        From restless mind to a stress-free life. 3 days, live, ₹199.
       </h1>
       <p class="mt-6 text-lg text-linen/85 max-w-md leading-relaxed">
         A 3-day meditation workshop to release your stress — practices structured by Sadhguru, under the guidance of a Sadhguru Gurukulam-trained teacher.
       </p>
       <div class="mt-9 flex flex-col sm:flex-row sm:items-center gap-4">
-	   <span class="text-sm text-linen/60">28-30 September · 3 live sessions · ₹199 flat · pick your own batch time</span>
-        <a href="#register" class="join-live-cta inline-flex justify-center items-center gap-2 bg-dawn hover:bg-dawnlt text-dusk font-semibold px-8 py-4 rounded-full shadow-soft transition-colors">
+        <a href="#register" class="inline-flex justify-center items-center gap-2 bg-dawn hover:bg-dawnlt text-dusk font-semibold px-8 py-4 rounded-full shadow-soft transition-colors">
           Join Live for ₹199
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
-       
+        <span class="text-sm text-linen/60">13–15 September · 3 live sessions · ₹199 flat · pick your own batch time</span>
       </div>
       <div class="mt-10 flex items-center gap-6 text-linen/70 text-sm">
         <div class="flex items-center gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E4B466" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> Beginner friendly</div>
@@ -163,16 +131,23 @@
     </div>
 
     <div class="relative flex justify-center md:justify-end">
-      <img src="assets/images/logo-icon.jpg" alt="Yoga Samskara" width="950" height="930"
-           class="w-64 md:w-80 rounded-2xl drop-shadow-2xl object-cover" fetchpriority="high" decoding="async">
+      <svg viewBox="0 0 360 400" class="w-64 md:w-80 drop-shadow-2xl" aria-hidden="true">
+        <circle cx="180" cy="150" r="110" fill="#E4B466" opacity="0.18"/>
+        <circle cx="180" cy="150" r="70" fill="#E4B466" opacity="0.28"/>
+        <path d="M120 330 Q180 260 240 330 L250 380 L110 380 Z" fill="#4A1616"/>
+        <circle cx="180" cy="250" r="42" fill="#F5EEDF" opacity="0.95"/>
+        <path d="M138 285 Q180 320 222 285 Q222 340 180 355 Q138 340 138 285 Z" fill="#F5EEDF" opacity="0.9"/>
+        <path d="M100 300 Q60 290 55 250" stroke="#F5EEDF" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.85"/>
+        <path d="M260 300 Q300 290 305 250" stroke="#F5EEDF" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.85"/>
+        <circle cx="180" cy="216" r="20" fill="#F5EEDF"/>
+      </svg>
     </div>
-  </div>
 </section>
 
 <!-- ============ BATCH TIMINGS ============ -->
 <section id="timings" class="bg-dusk2 py-14">
   <div class="max-w-4xl mx-auto px-5">
-    <p class="text-center text-linen/60 text-sm mb-6">28-30 September · same live 3-day program — pick the batch time that works for you</p>
+    <p class="text-center text-linen/60 text-sm mb-6">13–15 September · same live 3-day program — pick the batch time that works for you</p>
     <div class="grid sm:grid-cols-3 gap-4" id="batchGrid">
       <label class="batch-label flex flex-col items-center gap-1 border border-white/15 hover:border-dawn/60 rounded-xl px-4 py-5 cursor-pointer transition-colors">
         <input type="radio" name="batch" value="early" data-label="6:00 – 7:00 AM · Early morning batch" class="accent-dawn mb-1">
@@ -180,8 +155,8 @@
         <span class="text-linen/50 text-xs">Early morning batch</span>
       </label>
       <label class="batch-label flex flex-col items-center gap-1 border border-white/15 hover:border-dawn/60 rounded-xl px-4 py-5 cursor-pointer transition-colors">
-        <input type="radio" name="batch" value="morning" data-label="7:30 – 8:30 AM · Morning batch, with Vinay Sharma" class="accent-dawn mb-1">
-        <span class="text-linen font-serif text-lg">7:30 – 8:30 AM</span>
+        <input type="radio" name="batch" value="morning" data-label="7:00 – 8:00 AM · Morning batch, with Vinay Sharma" class="accent-dawn mb-1">
+        <span class="text-linen font-serif text-lg">7:00 – 8:00 AM</span>
         <span class="text-linen/50 text-xs">Morning batch · with Vinay Sharma</span>
       </label>
       <label class="batch-label flex flex-col items-center gap-1 border border-white/15 hover:border-dawn/60 rounded-xl px-4 py-5 cursor-pointer transition-colors">
@@ -230,7 +205,6 @@
       Every session is live over video call, so every participant gets real, personal attention. Here is exactly what happens each session.
     </p>
 
-    <div class="grid lg:grid-cols-[1fr_320px] gap-12 items-start">
     <div class="space-y-10">
       <div class="grid md:grid-cols-[80px_1fr] gap-5 md:gap-8 items-start">
         <div class="font-serif text-5xl text-dawn/50">01</div>
@@ -261,20 +235,6 @@
         </div>
       </div>
     </div>
-
-      <!-- Practice video, anchored to the three-day breakdown -->
-      <figure class="hidden lg:block">
-        <div class="rounded-2xl overflow-hidden border border-white/10 shadow-soft">
-          <video controls preload="metadata" poster="assets/images/Insight.PNG" class="w-full h-auto" aria-label="Samskara Yoga introduction video">
-            <source src="assets/video/workshop.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-          </video>
-        </div>
-        <figcaption class="text-linen/45 text-xs mt-3 leading-relaxed">
-          Upa Yoga and guided meditation — the same sequence, every session, so the practice becomes familiar rather than novel.
-        </figcaption>
-      </figure>
-    </div>
   </div>
 </section>
 
@@ -282,40 +242,21 @@
 <section id="teacher" class="bg-linen py-20 md:py-28">
   <div class="max-w-5xl mx-auto px-5 grid md:grid-cols-[1fr_1.4fr] gap-12 items-center">
     <div class="flex flex-col items-center md:items-start gap-4">
-      <img src="assets/images/rahul-portrait.jpg" alt="Rahul, Sadhguru Gurukulam-trained teacher" width="700" height="700" loading="lazy" decoding="async" class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-linen shadow-soft">
-      <button class="cert-trigger flex items-center gap-2 bg-white border border-dusk/10 rounded-full pl-1.5 pr-4 py-1.5 shadow-sm hover:shadow-md transition-shadow" data-cert="assets/images/rahul-with-certificate.jpg" data-name="Rahul" data-caption="Rahul with his Classical Hatha Yoga certification, Sadhguru Gurukulam">
-        <img src="assets/images/logo-icon.jpg" alt="" class="w-7 h-7 rounded-full object-cover">
+      <img src="assets/images/rahul-portrait.jpg" alt="Rahul, Sadhguru Gurukulam-trained teacher" class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-linen shadow-soft">
+      <button class="cert-trigger flex items-center gap-2 bg-white border border-dusk/10 rounded-full pl-1.5 pr-4 py-1.5 shadow-sm hover:shadow-md transition-shadow" data-cert="assets/images/rahul-certificate.jpg" data-name="Rahul">
+        <img src="assets/images/cert-seal.jpg" alt="" class="w-7 h-7 rounded-full object-cover">
         <span class="text-xs font-medium text-dusk/70">View certificate</span>
       </button>
     </div>
     <div>
       <p class="text-sm tracking-wide text-maroon font-medium mb-3">My story</p>
-	
-
       <h2 class="font-serif text-3xl md:text-4xl leading-tight mb-1">Rahul</h2>
-	    <a href="https://www.instagram.com/rahul.yoga.samskara?stkn=Yml2MDZneHlnb3Jz&utm_source=qr" target="_blank" rel="noopener noreferrer"
-   class="inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
-  <svg width="20" height="20" viewBox="0 0 24 24">
-    <defs>
-      <radialGradient id="igGradient" cx="30%" cy="107%" r="150%">
-        <stop offset="0%"  stop-color="#FFDD55"/>
-        <stop offset="10%" stop-color="#FFDD55"/>
-        <stop offset="50%" stop-color="#FF543E"/>
-        <stop offset="100%" stop-color="#C837AB"/>
-      </radialGradient>
-    </defs>
-    <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#igGradient)"/>
-    <rect x="6.5" y="6.5" width="11" height="11" rx="3.5" fill="none" stroke="#fff" stroke-width="1.6"/>
-    <circle cx="12" cy="12" r="3.3" fill="none" stroke="#fff" stroke-width="1.6"/>
-    <circle cx="16.4" cy="7.6" r="1.1" fill="#fff"/>
-  </svg>
-</a>
       <p class="text-dusk/50 text-sm mb-4">Yoga Samskara · Sathgamaya Program</p>
       <p class="text-dusk/75 text-lg leading-relaxed mb-4">
         For years I struggled to meditate without any real guidance — trying on my own, getting nowhere, and slowly losing faith that it would ever work for me. What changed everything was Sadhguru's structured methods. They helped me release my stress and, for the first time, actually experience meditativeness — not just the idea of it.
       </p>
       <p class="text-dusk/75 leading-relaxed mb-6">
-        That journey led me to train formally as a teacher within the Sadhguru Gurukulam. In this 3-day program, I share the exact path I walked, so you Don't have to struggle alone the way I did.
+        That journey led me to train formally as a teacher within the Sadhguru Gurukulam. In this 3-day program, I share the exact path I walked, so you don't have to struggle alone the way I did.
       </p>
       <blockquote class="border-l-2 border-dawn pl-5 italic text-dusk/80 font-serif text-lg">
         "I couldn't find my way to meditativeness alone. A structured path, and someone to guide me through it, made all the difference — that is what I want to give you."
@@ -323,91 +264,22 @@
     </div>
   </div>
 
-  <!-- Certification, shown rather than claimed -->
-  <div class="max-w-5xl mx-auto px-5 mt-16 pt-14 border-t border-dusk/10">
-    <p class="text-sm tracking-wide text-maroon font-medium mb-3">Certified, not self-declared</p>
-    <h3 class="font-serif text-2xl md:text-3xl leading-tight mb-3">Trained at the Isha Yoga Center</h3>
-    <p class="text-dusk/70 leading-relaxed max-w-2xl mb-9">
-      Both teachers completed the intensive Classical Hatha Yoga teacher-training programme at the Sadhguru Gurukulam. Tap either photograph to view it full size.
-    </p>
-    <div class="grid sm:grid-cols-2 gap-6">
-      <figure>
-        <button type="button" class="cert-trigger zoomable cred-photo cred-frame block w-full rounded-2xl overflow-hidden border border-dusk/10 shadow-soft focus:outline-none"
-                data-cert="assets/images/rahul-with-certificate.jpg"
-                data-caption="Rahul — Classical Hatha Yoga certification, Sadhguru Gurukulam"
-                aria-label="View Rahul's certification photograph full size">
-          <img src="assets/images/rahul-with-certificate.jpg" alt="Rahul holding his Classical Hatha Yoga certificate at the Isha Yoga Center" width="900" height="932" loading="lazy" decoding="async">
-        </button>
-        <figcaption class="text-dusk/60 text-sm mt-3">Rahul — Classical Hatha Yoga, Sadhguru Gurukulam</figcaption>
-      </figure>
-      <figure>
-        <button type="button" class="cert-trigger zoomable cred-photo cred-frame block w-full rounded-2xl overflow-hidden border border-dusk/10 shadow-soft focus:outline-none"
-                data-cert="assets/images/vinay-with-certificate.jpg"
-                data-caption="Vinay Sharma — Classical Hatha Yoga certification, Sadhguru Gurukulam"
-                aria-label="View Vinay Sharma's certification photograph full size">
-          <img src="assets/images/vinay-with-certificate.jpg" alt="Vinay Sharma holding his Classical Hatha Yoga certificate at the Isha Yoga Center" width="760" height="1013" loading="lazy" decoding="async">
-        </button>
-        <figcaption class="text-dusk/60 text-sm mt-3">Vinay Sharma — Classical Hatha Yoga, Sadhguru Gurukulam</figcaption>
-      </figure>
-    </div>
-  </div>
-  
-  
-
-   <blockquote class="border-l-2 border-dawn pl-5 italic text-dusk/80 font-serif text-lg">   “                                                                                             ”</blockquote>
-	  
-
-
-	
-<div class="max-w-5xl mx-auto px-5 grid md:grid-cols-[1fr_1.4fr] gap-12 items-center">
-
-    <div class="flex flex-col items-center md:items-start gap-5">
-	
-	    <p class="text-sm tracking-wide text-maroon font-medium mb-6">Also teaching this program</p>
- 
-	
-      <img src="assets/images/vinay-portrait.jpg" alt="Vinay, Sadhguru Gurukulam-trained teacher" width="700" height="700" loading="lazy" decoding="async" class="w-56 h-56 md:w-64 md:h-64 rounded-full object-cover border-4 border-linen shadow-soft">
-      <button class="cert-trigger flex items-center gap-2 bg-white border border-dusk/10 rounded-full pl-1.5 pr-4 py-1.5 shadow-sm hover:shadow-md transition-shadow" data-cert="assets/images/vinay-with-certificate.jpg" data-name="Vinay" data-caption="Vinay with his Classical Hatha Yoga certification, Sadhguru Gurukulam">
-        <img src="assets/images/logo-icon.jpg" alt="" class="w-7 h-7 rounded-full object-cover">
-        <span class="text-xs font-medium text-dusk/70">View certificate</span>
+  <div class="max-w-5xl mx-auto px-5 mt-14 pt-14 border-t border-dusk/10">
+    <p class="text-sm tracking-wide text-maroon font-medium mb-6">Also teaching this program</p>
+    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+      <button type="button" class="cert-trigger shrink-0 rounded-full cursor-zoom-in focus:outline-none" data-cert="assets/images/vinay-portrait.jpg" data-name="Vinay Sharma" data-caption="Vinay Sharma" aria-label="View Vinay Sharma photo larger">
+        <img src="assets/images/vinay-portrait.jpg" alt="Vinay Sharma, Sadhguru Gurukulam-trained teacher" class="w-20 h-20 rounded-full object-cover border-2 border-linen shadow-sm hover:shadow-md transition-shadow">
       </button>
-    </div>
-    <div>
-      <p class="text-sm tracking-wide text-maroon font-medium mb-3">My story</p>
-	
-      <h2 class="font-serif text-3xl md:text-4xl leading-tight mb-1">Vinay Sharma</h2>
-	      <a href="https://www.instagram.com/m_vinays?stkn=MXJvM3NncG1lNHA2Zg==" target="_blank" rel="noopener noreferrer"
-   class="inline-flex items-center gap-2 hover:opacity-80 transition-opacity">
-  <svg width="20" height="20" viewBox="0 0 24 24">
-    <defs>
-      <radialGradient id="igGradient" cx="30%" cy="107%" r="150%">
-        <stop offset="0%"  stop-color="#FFDD55"/>
-        <stop offset="10%" stop-color="#FFDD55"/>
-        <stop offset="50%" stop-color="#FF543E"/>
-        <stop offset="100%" stop-color="#C837AB"/>
-      </radialGradient>
-    </defs>
-    <rect x="2" y="2" width="20" height="20" rx="6" fill="url(#igGradient)"/>
-    <rect x="6.5" y="6.5" width="11" height="11" rx="3.5" fill="none" stroke="#fff" stroke-width="1.6"/>
-    <circle cx="12" cy="12" r="3.3" fill="none" stroke="#fff" stroke-width="1.6"/>
-    <circle cx="16.4" cy="7.6" r="1.1" fill="#fff"/>
-  </svg>
-</a>
-      <p class="text-dusk/75 text-lg leading-relaxed mb-4"> 
       <div class="text-center sm:text-left">
+        <h3 class="font-serif text-xl mb-1">Vinay Sharma</h3>
         <p class="text-dusk/60 text-sm mb-2">Sadhguru Gurukulam-trained teacher · leads the 7:30–8:30 AM morning batch</p>
-        <p class="text-dusk/70 leading-relaxed max-w-xl mb-3">My journey into yoga began with a search for a deeper understanding of myself. What started as a practice gradually became a way of life.</p>
- 
-<p class="text-dusk/70 leading-relaxed max-w-xl mb-3">I trained formally in Classical Hatha Yoga at the Isha Yoga Center, completing an intensive teacher-training program. Today, I share these practices to help others experience yoga beyond just the physical.</p>
- 
- <blockquote class="border-l-2 border-dawn pl-5 italic text-dusk/80 font-serif text-lg">   “Yoga gave me a path to explore myself. That is the journey I want to share with you.”</blockquote>
+        <p class="text-dusk/70 leading-relaxed max-w-xl mb-3">Trained within the same Sadhguru Gurukulam lineage, Vinay brings the identical structured Sathgamaya framework to those joining the morning batch.</p>
+        <button class="cert-trigger inline-flex items-center gap-2 bg-white border border-dusk/10 rounded-full pl-1.5 pr-4 py-1.5 shadow-sm hover:shadow-md transition-shadow" data-cert="assets/images/vinay-certificate.jpg" data-name="Vinay">
+          <img src="assets/images/cert-seal.jpg" alt="" class="w-7 h-7 rounded-full object-cover">
+          <span class="text-xs font-medium text-dusk/70">View certificate</span>
+        </button>
+      </div>
     </div>
-  </div>
-
-	
-   
-   
- 
   </div>
 </section>
 
@@ -466,7 +338,7 @@
 
     <div class="bg-linen rounded-2xl shadow-soft overflow-hidden">
       <div class="dawn-gradient px-7 py-8 text-center">
-        <p class="text-linen/80 text-sm mb-1">3-Day Live Sadhana Reset · 28-30 Sept</p>
+        <p class="text-linen/80 text-sm mb-1">3-Day Live Sadhana Reset · 13–15 Sept</p>
         <div class="flex items-end justify-center gap-2">
           <span class="font-serif text-5xl text-linen">₹199</span>
           <span class="text-linen/60 text-sm mb-1.5">one time</span>
@@ -482,23 +354,6 @@
         <button id="payBtn" class="w-full bg-maroon hover:bg-maroon2 text-linen font-semibold py-4 rounded-full transition-colors">
           Pay ₹199 &amp; Join Live
         </button>
-
-        <!-- Official Razorpay embed button, kept in the DOM exactly as provided.
-             Hidden because payBtn above (styled to match the page) opens the
-             same payment link via JS below. Remove the `hidden` class if you'd
-             rather show Razorpay's own default-styled button instead/as well. -->
-        <div class="hidden">
-          <div class="razorpay-embed-btn" data-url="https://pages.razorpay.com/pl_Te9xyjCQpUuqz7/view" data-text="Pay ₹199 &amp; Join Live" data-color="#528FF0" data-size="large">
-            <script>
-              (function(){
-                var d=document; var x=!d.getElementById('razorpay-embed-btn-js')
-                if(x){ var s=d.createElement('script'); s.defer=!0;s.id='razorpay-embed-btn-js';
-                s.src='https://cdn.razorpay.com/static/embed_btn/bundle.js';d.body.appendChild(s);} else{var rzp=window['__rzp__'];
-                rzp && rzp.init && rzp.init()}})();
-            </script>
-          </div>
-        </div>
-
         <div class="flex items-center justify-center gap-4 mt-4 text-xs text-dusk/50">
           <span class="flex items-center gap-1.5">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4B5B41" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
@@ -536,7 +391,7 @@
           <svg class="faq-chevron shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-panel">
-          <p class="text-dusk/70 leading-relaxed pt-3 pr-8">I tried that for years, and it's what kept me stuck. What actually moved me forward was a structured method and a guide to walk it with me. This program gives you both — so you Don't spend years figuring it out the way I did.</p>
+          <p class="text-dusk/70 leading-relaxed pt-3 pr-8">I tried that for years, and it's what kept me stuck. What actually moved me forward was a structured method and a guide to walk it with me. This program gives you both — so you don't spend years figuring it out the way I did.</p>
         </div>
       </div>
 
@@ -585,19 +440,8 @@
 </section>
 
 <!-- ============ FOOTER / STICKY MOBILE CTA ============ -->
-<footer class="bg-dusk pt-14 pb-28 md:pb-12">
-  <!-- Certified-teacher badge closes the page as it opened: on the lineage -->
-  <div class="max-w-6xl mx-auto px-5 flex flex-col items-center text-center">
-    <img src="assets/images/certified-teacher-badge.jpg"
-         alt="Classical Hatha Yoga — Sadhguru Gurukulam Certified Teacher"
-         width="713" height="277" loading="lazy" decoding="async"
-         class="w-64 sm:w-80 h-auto rounded-xl shadow-soft">
-    <p class="text-linen/45 text-xs mt-4 max-w-sm leading-relaxed">
-      Taught by teachers certified through the Classical Hatha Yoga programme at the Sadhguru Gurukulam.
-    </p>
-  </div>
-
-  <div class="max-w-6xl mx-auto px-5 mt-10 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-linen/50 text-sm">
+<footer class="bg-dusk py-10 pb-28 md:pb-10">
+  <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4 text-linen/50 text-sm">
     <span class="font-serif text-linen/80">Yoga Samskara — Sathgamaya Program</span>
     <span>Taught live by Rahul · Sadhguru Gurukulam-trained</span>
   </div>
@@ -616,15 +460,12 @@
 
 <!-- sticky mobile CTA bar -->
 <div class="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-dusk/95 backdrop-blur border-t border-white/10 px-5 py-3">
-  <a href="#register" class="join-live-cta flex items-center justify-center gap-2 bg-dawn text-dusk font-semibold py-3.5 rounded-full">
+  <a href="#register" class="flex items-center justify-center gap-2 bg-dawn text-dusk font-semibold py-3.5 rounded-full">
     Join Live for ₹199
   </a>
 </div>
 
 <script>
-  // Razorpay payment link — used by every "Join Live" / "Pay & Join Live" button
-  const RAZORPAY_PAYMENT_URL = 'https://pages.razorpay.com/pl_Te9xyjCQpUuqz7/view';
-
   // Mobile menu toggle
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -716,28 +557,16 @@
   updateBatchConfirm();
 
   payBtn.addEventListener('click', (e) => {
-    e.preventDefault();
     const checked = document.querySelector('input[name="batch"]:checked');
     if (!checked) {
-      // No batch picked yet — still nudge them toward the time picker,
-      // but always send them on to payment either way.
+      e.preventDefault();
       document.getElementById('timings').scrollIntoView({ behavior: 'smooth', block: 'center' });
       batchConfirm.classList.add('nudge');
     }
-    window.open(RAZORPAY_PAYMENT_URL, '_blank', 'noopener');
   });
 
-  // "Join Live for ₹199" buttons (nav, mobile menu, hero, sticky mobile bar)
-  // open the Razorpay payment link directly.
-  document.querySelectorAll('.join-live-cta').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.open(RAZORPAY_PAYMENT_URL, '_blank', 'noopener');
-    });
-  });
-
-  // Countdown timer — set to the batch start date, 28 September (IST)
-  const target = new Date('2026-09-28T00:00:00+05:30').getTime();
+  // Countdown timer — set to the batch start date, 13 September (IST)
+  const target = new Date('2026-09-13T00:00:00+05:30').getTime();
   function updateCountdown() {
     const now = new Date().getTime();
     const distance = Math.max(target - now, 0);
