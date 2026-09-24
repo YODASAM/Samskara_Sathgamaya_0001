@@ -39,6 +39,25 @@
     }
   }
 </script>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+ fbq('init', '1415769724094281'); 
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1" 
+src="https://www.facebook.com/tr?id=1415769724094281&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
@@ -96,7 +115,7 @@
       <a href="#problem" class="hover:text-dawnlt transition-colors">Why solo practice stalls</a>
       <a href="#program" class="hover:text-dawnlt transition-colors">The 3 days</a>
       <a href="#teacher" class="hover:text-dawnlt transition-colors">Your teachers</a>
-      <a href="#testimonials" class="hover:text-dawnlt transition-colors">Reviews</a>
+      <a href="#testimonials" class="hover:text-dawnlt transition-colors">Testimonials</a>
       <a href="#faq" class="hover:text-dawnlt transition-colors">FAQ</a>
   </nav>
 <!-- Added 'sm:ml-8' (margin-left) to create blank space -->
@@ -270,7 +289,7 @@
       <!-- Practice video, anchored to the three-day breakdown -->
       <figure class="hidden lg:block">
         <div class="rounded-2xl overflow-hidden border border-white/10 shadow-soft">
-          <video controls preload="metadata" poster="assets/images/Insight.PNG" class="w-full h-auto" aria-label="Samskara Yoga introduction video">
+          <video controls preload="metadata" poster="assets/images/insight.PNG" class="w-full h-auto" aria-label="Samskara Yoga introduction video">
             <source src="assets/video/workshop.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
@@ -756,6 +775,7 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 </script>
+
 
 </body>
 </html>
